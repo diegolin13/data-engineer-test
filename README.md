@@ -21,10 +21,10 @@ Nota: Se consideró como venta aquellas transacciones con status paid.
 
 Requisitos: Tener Docker instalado y clonar este repositorio.
 
-1.- Posicinoarse en la carpeta ejercicio1
-2.- Generar la imagen a partir del Dockerfile docker build -t <NOMBRE_IMAGEN> .
-3.- Generar un contenedor a partir de esta imagen y ejecutarlo docker run -it --rm <NOMBRE_IMAGEN:etiqueta>
-4.- Al finalizar el proceso, dentro del contenedor en la carpeta /app debió haberse generado dos directorios nuevos curated y augmented
+1.- Posicinoarse en la carpeta ejercicio1  
+2.- Generar la imagen a partir del Dockerfile docker build -t <NOMBRE_IMAGEN> .  
+3.- Generar un contenedor a partir de esta imagen y ejecutarlo docker run -it --rm <NOMBRE_IMAGEN:etiqueta>  
+4.- Al finalizar el proceso, dentro del contenedor en la carpeta /app debió haberse generado dos directorios nuevos curated y augmented  
 
 ![Alt text](https://private-user-images.githubusercontent.com/63220767/292305373-24566294-1b7a-4f4e-a93d-01d11d1b9195.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDMxODg0MTMsIm5iZiI6MTcwMzE4ODExMywicGF0aCI6Ii82MzIyMDc2Ny8yOTIzMDUzNzMtMjQ1NjYyOTQtMWI3YS00ZjRlLWE5M2QtMDFkMTFkMWI5MTk1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMjElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjIxVDE5NDgzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ2N2VjN2NlNjYzMGMzOWFhZWRlYzkzZTU2MjVmNDFlZjIwMzlhMzZjZDY3MjE5OGQ2MWVjMGIzZDA1NDc2YTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.NTeE1S8AioYCf7WhpcRCungzKl1JJjHziKUw1ASHJsE)
 
