@@ -21,7 +21,7 @@ def drop_nulls(origin_df, spark):
     df_null = origin_df.filter(filter_expr)
     if df_null.count():
         df_null.coalesce(1).write.csv('./curated/data_prueba_tecnica_err.csv', header=True, mode="overwrite")
-    origin_df = origin_df.dropna(how='any', subset=['name', 'company_id'])
+    origin_df = origin_df.dropna(how='any', subset=['name', 'company_id', 'id'])
     return origin_df
 
 
