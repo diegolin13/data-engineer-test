@@ -16,3 +16,9 @@ A.- El primer proceso se encarga de hacer una limpieza a la data cruda y deposit
 
 B.- El segundo proceso toma la data limpia de la capa curada y realiza funciones de agrupación y agregación para conocer las ventas por día y por nombre de empresa. El resultado de estas agregaciones fue depositado en la capa augmented.
 Nota: Se consideró como venta aquellas transacciones con status paid.
+
+## Preguntas y respuestas del ejercicio 1
+
+1.- Para los ids nulos ¿Qué sugieres hacer con ellos ?
+
+R: Las columnas que contengan el nombre y el id nulos son con considerados registros corruptos que pueden afectar el resultado del reporte, por lo tanto se decidió separarlos en un csv diferente para analizarlo y reportar esta anomalía.
