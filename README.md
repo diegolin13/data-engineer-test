@@ -32,4 +32,21 @@ Requisitos: Tener Docker instalado y clonar este repositorio.
 
 1.- Para los ids nulos ¿Qué sugieres hacer con ellos ?
 
-R: Las columnas que contengan id nulos son con considerados registros corruptos que pueden afectar el resultado del reporte, por lo tanto se decidió separarlos en un csv diferente para analizarlo y reportar esta anomalía de ingesta, ya que cada transaccion debería ser única.
+R: Las columnas que contengan id nulos son con considerados registros corruptos que pueden afectar el resultado del reporte, por lo tanto se decidió separarlos en un csv diferente para analizarlo y reportar esta anomalía de ingesta, ya que cada transaccion debería ser única.  
+
+2.- Considerando las columnas name y company_id ¿Qué inconsistencias notas y como las mitigas?  
+
+R: Analizando estas columnas se detectó que hay algunos valores Nulos y otros que parecen tener algun "error de dedo" tanto para company_id  con valores como '********' como para la columna name con valores como: 'MiPas0xFFFF'.  
+
+Se decidió que los valores nulos sean considerados como registros corruptos y fueron separados en la carpeta de errores en capa curada.
+Para los valores con "error de dedo", al no contar con una regla de negocio, se dejaron tal cual lo que provoca que sean consideradas como empresas diferentes. Se puede considerar este punto como una deuda técnica para definir una regla y saber qué hacer con estos registros.  
+
+3.- Para el resto de los campos ¿Encuentras valores atípicos y de ser así cómo procedes?  
+
+R: La columna de created_at cuenta con una fecha que tiene un formato yyyMMdd (sin guiones) a diferencia del resto que cuentan con un formato yyyy-MM-dd. Para corregirlo, en el proceso de limpieza esta columna evalua que las fechas cuenten con este formato yyyy-MM-dd en caso de que no se pasa del formato yyyMMdd al formato yyyy-MM-dd.  
+
+Por otro lado la columna de amount es de tipo Double, pero existen valores que se consideran como Infinity (Probablemente cuentan con demasiados decimales) y podría afectar al proceso. Entonces en esta columna se valida que su valor sea realmente un numero en caso contrario se le coloca un valor 0 para que no afecten los resultados.  
+
+4.- ¿Qué mejoras propondrías a tu proceso ETL para siguientes versiones?
+
+R: Tener una correcta definición por parte de negocio de cómo se considera una venta, que criterios debe cumplir la transacción para poder ser tomado en cuenta como una venta. Por otro lado sería ideal ejecutar el proceso desde un orquestador como Airflow para que primero se corra el ETL de limpieza y al terminar se ejecute el ETL de reportes. Se hizo el intento pero tuve problemas con la instalación de pyspark dentro del contenedor de AirFLow (Sigo investigando como solucionarlo)
