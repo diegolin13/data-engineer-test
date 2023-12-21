@@ -25,7 +25,7 @@ Requisitos: Tener Docker instalado y clonar este repositorio.
 2.- Generar la imagen a partir del Dockerfile docker build -t <NOMBRE_IMAGEN> .
 3.- Generar un contenedor a partir de esta imagen y ejecutarlo docker run -it --rm <NOMBRE_IMAGEN:etiqueta>
 4.- Al finalizar el proceso, dentro del contenedor en la carpeta /app debió haberse generado dos directorios nuevos curated y augmented
-![Resultado del ETL](https://drive.google.com/file/d/1rwiH3cwqLH0h-nWLgQk49GpqR1gsS8H2/view)
+![Alt text](image.png)
 
 ## Preguntas y respuestas del ejercicio 1
 
