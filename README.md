@@ -50,3 +50,7 @@ Por otro lado la columna de amount es de tipo Double, pero existen valores que s
 4.- ¿Qué mejoras propondrías a tu proceso ETL para siguientes versiones?
 
 R: Tener una correcta definición por parte de negocio de cómo se considera una venta, que criterios debe cumplir la transacción para poder ser tomado en cuenta como una venta. Por otro lado sería ideal ejecutar el proceso desde un orquestador como Airflow para que primero se corra el ETL de limpieza y al terminar se ejecute el ETL de reportes. Se hizo el intento pero tuve problemas con la instalación de pyspark dentro del contenedor de AirFLow (Sigo investigando como solucionarlo)
+
+# Ejercicio 2
+
+En el directorio de ejercicio2 se encontrará el desarrollo de la segunda parte de la prueba.
